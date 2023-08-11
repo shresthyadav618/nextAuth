@@ -2,6 +2,10 @@ import mongoose from "mongoose";
 
 export async function connectDb(){
     try{
+        if(!process.env.MONGO_URL){
+            throw new Error("invalid mongo url");
+        }
+        console.log(process.env.MONGO_URL);
         mongoose.connect(process.env.MONGO_URL);
         const connection = mongoose.connection;
         
