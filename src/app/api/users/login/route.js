@@ -36,12 +36,12 @@ try{
         return response;
         
     }else{
-        NextResponse.json({error : 'The user doesnt exists , invalid credentials',err},{status : 500});
+        return NextResponse.json({error : 'The user doesnt exists , invalid credentials',err},{status : 500});
     }
 
 }catch(err){
     console.log('there was some error ',err);
-    NextResponse.json({error : err.message},{status : 500});
+    return NextResponse.json({error : err.message},{status : 500});
 }
 
 }
