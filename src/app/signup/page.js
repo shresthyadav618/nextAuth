@@ -47,7 +47,7 @@ const useSignUp = () => {
       <input className="p-4 text-black" name="email" placeholder="email" type="email" value={user.email} onChange={(e)=>{setUser((prev)=>{return {...prev,email : e.target.value}})}}></input>
       <label htmlFor="password">password</label>
       <input className="p-4 text-black" name="password" placeholder="password" type="password" value={user.password} onChange={(e)=>{setUser((prev)=>{return {...prev,password : e.target.value}})}}></input>
-      <button onClick={onSignUp} className="p-4 bg-slate-600">{buttonDisabled ? 'No Singup' : 'SignUp'}</button>
+      <button onClick={buttonDisabled ? '' : onSignUp} className="p-4 bg-slate-600">{buttonDisabled ? 'No Singup' : 'SignUp'}</button>
       <Link href={'/login'}>Visit the login page</Link>
     </div>
   )

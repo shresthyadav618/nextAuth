@@ -6,7 +6,7 @@ import { NextResponse } from "next/server";
 export function middleware(request){
    const path = request.nextUrl.pathname;
    console.log('the pathname is',path);
-   const isPublicPath = path ==='/login' ||  path === '/signup';
+   const isPublicPath = path ==='/login' ||  path === '/signup' || path==='/verifyemail';
    const token =  request.cookies.get('token')?.value || '';
    console.log(token,isPublicPath);
    if(isPublicPath && token){
@@ -25,5 +25,6 @@ export const config = {
         '/profile',
         '/login',
         '/signup',
+        '/verifyemail'
     ]
 }
