@@ -13,6 +13,7 @@ export async function GET(request){
     try{
         const data = await getDataFromToken(request);
         if(data){
+            console.log(data);
             const {email,username,_id} = data;
             console.log(email,username,_id);
             const response = await userModel.findById(_id);
